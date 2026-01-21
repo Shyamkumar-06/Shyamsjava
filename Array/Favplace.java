@@ -22,7 +22,7 @@ class Favplace
 		{
 			for(int j=0;j<arr[i].length;j++)
 			{
-				System.out.printf(" %10s " ,arr[i][j]);
+				System.out.printf("%10s " ,arr[i][j]);
 				
 			}
 			System.out.println("  ");				

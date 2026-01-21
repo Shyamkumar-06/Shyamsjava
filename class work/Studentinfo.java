@@ -27,7 +27,7 @@ class Studentinfo
 				case 2: 
 				 for(int i=1;i<index;i++)
 				 {
-					System.out.print(name[i]);
+					System.out.println(name[i]);
 				 }
 				
 				break;

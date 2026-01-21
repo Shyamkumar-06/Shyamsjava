@@ -197,7 +197,7 @@ class Spotify
 		}
 		else if(option==5)
 		{
-			System.out.println("Welcome to ILLAIYARAJA  HIts");
+			System.out.println("Welcome to U1 HIts");
 			System.out.println("1. Melody");
 			System.out.println("2. Kuthu");
 			System.out.println("3,Motivational");

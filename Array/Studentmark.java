@@ -15,7 +15,6 @@ class Studentmark
 			{
 				System.out.print("Eter "+"stu"+i+" subject  "+j);
 		    	arr[i][j]=sc.nextInt();
-				
 			}
 		}
 		for(int i=0;i<arr.length;i++)
@@ -23,9 +22,8 @@ class Studentmark
 			for(int j=0;j<arr[i].length;j++)
 			{
 				System.out.print(arr[i][j]+"  ");
-				
 			}
-			System.out.println(" ");
+			   System.out.println(" ");
 		}
 		
 		
