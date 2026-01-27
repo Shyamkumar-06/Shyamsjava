@@ -35,13 +35,13 @@ class BinarySearch
 			{
 				return mod;
 			}
-			else if(search<right)
-			{
-				left=mod+1;
-			}
-			else if(search>right)
+			else if(search<arr[mod])
 			{
 				right=mod-1;
+			}
+			else if(search>arr[mod])
+			{
+				left=mod+1;
 			}
 			mod=(right+left)/2;
 		}
