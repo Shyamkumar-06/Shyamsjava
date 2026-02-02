@@ -23,15 +23,20 @@ class Isearchtion
 		int index=sc.nextInt();
 		System.out.println("Enter the Element you to be added");
 		int element=sc.nextInt();
-		preinsearchtion(index,arr,newarr);
+		preinsearchtion(index,arr,newarr,element);
 		
 		
 	}
-	 void preinsearchtion(int index,int arr[],int newarr[])
+	 void preinsearchtion(int index,int arr[],int newarr[],int element)
 	{
 		for(int i=0;i<index;i++)
 		{
 			newarr[i]=arr[i];
+		}
+		newarr[index]=element;
+		for(int i=index;i<arr.length;i++)
+		{
+		    newarr[i+1]=arr[i];
 		}
 		printArr(newarr);
 	}

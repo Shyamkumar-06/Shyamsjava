@@ -1,97 +1,93 @@
 import java.util.Scanner;
-class Employee
-{
-	int choice;
-	Scanner sc=new Scanner(System.in);
-	int len;
-	int arr[];
-	int index=0;
-	int remove;
-	int newemp[];
-	public static void main(String[] args)
-	{
-		Employee emp=new Employee();
-		System.out.println("Enter the length of array:");
-		emp.length=sc.nextInt();
-		arr=new int[length];
-		newemp=new int[len-1];
-		Employee emp=new Employee();
-		emp.menu();
-	
-		
-	}
-	void menu()
-	{
-		do
-		{
-			System.out.println("************MAIN MENU***************");
-			System.out.println("1.Add Employee");
-			System.out.println("2.Remove Employee");
-			System.out.println("3.Display Employee");
-			System.out.println("Enter your choice:");
-			choice=sc.nextInt();
-			switch(choice)
-			{
-			case 1:
-			addEmp();
-			 print(newemp);
-			break;
-			case 2:
-			removeEmp();
-			 print(newemp);
-			break;
-			case 3:
-			  display();
-			  print(newemp);
-			break;
-			case 4:
-			break;
-			default:
-			System.out.println("Enter valid choice");
-			}	
-		}while(choice!=4) ;
-		
-		
-		
-	}
-	void addEmp()
-	{
-		arr[index]=sc.nextInt();
-		for(int i=index;i<index+1;i++)
-		{
-			newemp[i]=arr[i];
-		}
-		index++	;	
-		
-	}
-	void removeEmp()
-	{
-		for(int i=0;i<arr.length;i++)
-		{
-			if(remove==arr[i])
-			{
-				for(int j=i;j<arr.length;j++)
-				{
-					newemp[i-1]=arr[i];
-				}
-			}
-		}
-		
-	}
-	void display()
-	{
-		for(int i=0;i<arr.length;i++)
-		{
-			newemp[i-1]=arr[i];
-		}
-		
-	}
-	void print(int arr1[])
-	{
-		for(int i=0;i<index;i++)
-		{
-			System.out.println(arr1[i]+" ");
-		}
-	}
 
+class Employee {
+    int choice;
+    static Scanner sc = new Scanner(System.in);
+    int[] arr;
+    int index = 0; 
+
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        System.out.println("Enter the maximum capacity of the company:");
+        int length = sc.nextInt();
+        emp.arr = new int[length]; 
+        emp.menu();
+    }
+
+    void menu() {
+        do {
+            System.out.println("\n************ MAIN MENU ************");
+            System.out.println("1. Add Employee ID");
+            System.out.println("2. Remove Employee ID");
+            System.out.println("3. Display Employee IDs");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    addEmp();
+                    break;
+                case 2:
+                    removeEmp();
+                    break;
+                case 3:
+                    display();
+                    break;
+                case 4:
+                    System.out.println("Exiting system...");
+                    break;
+                default:
+                    System.out.println("Enter a valid choice.");
+            }
+        } while (choice != 4);
+    }
+
+    void addEmp() {
+        if (index < arr.length) {
+            System.out.print("Enter employee ID: ");
+            arr[index] = sc.nextInt();
+            index++; 
+            System.out.println("Employee ID added.");
+        } else {
+            System.out.println("Error: System at maximum capacity.");
+        }
+    }
+
+    void removeEmp() {
+        System.out.print("Enter employee ID to remove: ");
+        int toRemove = sc.nextInt();
+        int foundAt = -1;
+
+        
+        for (int i = 0; i < index; i++) {
+            if (arr[i] == toRemove) {
+                foundAt = i;
+                break;
+            }
+        }
+
+        
+        if (foundAt != -1) {
+            for (int i = foundAt; i < index - 1; i++) {
+                arr[i] = arr[i + 1];
+            }
+            index--; 
+            System.out.println("Employee ID removed.");
+        } else {
+            System.out.println("Employee ID not found.");
+        }
+    }
+
+    void display() {
+        if (index == 0) {
+            System.out.println("No employees in the list.");
+        } else {
+            System.out.println("\nEmployee IDs:");
+            for (int i = 0; i < index; i++) {
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
